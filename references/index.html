@@ -965,6 +965,81 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#python-rl-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python RL Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python RL Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production-ready-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production-Ready Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specialized-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#our-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-baselines3-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable-Baselines3 Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanrl-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      CleanRL Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Framework
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -1510,6 +1585,81 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#python-rl-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python RL Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python RL Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production-ready-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production-Ready Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specialized-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#our-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-baselines3-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable-Baselines3 Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanrl-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      CleanRL Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Framework
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next Steps
@@ -1715,6 +1865,140 @@ Phase 2: Fine-tune encoder → task adaptation</p>
 </code></pre></div></p>
 <p><strong>Complete citation</strong> (all five papers):</p>
 <p>See individual paper pages for full BibTeX.</p>
+<h2 id="python-rl-frameworks">Python RL Frameworks<a class="headerlink" href="#python-rl-frameworks" title="Permanent link">&para;</a></h2>
+<p>When implementing RL systems, you can choose from several mature frameworks. Here are the most popular:</p>
+<h3 id="production-ready-frameworks">Production-Ready Frameworks<a class="headerlink" href="#production-ready-frameworks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Strengths</th>
+<th>Use Case</th>
+<th>Algorithms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/DLR-RM/stable-baselines3">Stable-Baselines3</a></strong></td>
+<td>Easy to use, well-documented, PyTorch-based</td>
+<td>Best for getting started, research</td>
+<td>PPO, A2C, SAC, TD3, DQN</td>
+</tr>
+<tr>
+<td><strong><a href="https://docs.ray.io/en/latest/rllib/index.html">Ray RLlib</a></strong></td>
+<td>Distributed training, production-ready, scalable</td>
+<td>Large-scale deployments</td>
+<td>PPO, IMPALA, APPO, DQN, SAC</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/vwxyzjn/cleanrl">CleanRL</a></strong></td>
+<td>Single-file implementations, highly readable</td>
+<td>Learning RL, research, modifications</td>
+<td>PPO, DQN, SAC, TD3</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/thu-ml/tianshou">Tianshou</a></strong></td>
+<td>Fast, modular, elegant API</td>
+<td>Research, custom algorithms</td>
+<td>PPO, SAC, DQN, DDPG, A2C</td>
+</tr>
+</tbody>
+</table>
+<h3 id="specialized-frameworks">Specialized Frameworks<a class="headerlink" href="#specialized-frameworks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Focus</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://gymnasium.farama.org/">Gymnasium</a></strong></td>
+<td>Environment interface (successor to OpenAI Gym)</td>
+<td>Creating custom environments</td>
+</tr>
+<tr>
+<td><strong><a href="https://pettingzoo.farama.org/">PettingZoo</a></strong></td>
+<td>Multi-agent RL</td>
+<td>Competitive/cooperative agents</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/alex-petrenko/sample-factory">Sample Factory</a></strong></td>
+<td>High-throughput training</td>
+<td>Very fast environments (games)</td>
+</tr>
+<tr>
+<td><strong><a href="https://docs.ray.io/en/latest/rllib/index.html">RLlib Trainer</a></strong></td>
+<td>Hyperparameter tuning at scale</td>
+<td>Large experiments, tuning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="our-implementation">Our Implementation<a class="headerlink" href="#our-implementation" title="Permanent link">&para;</a></h3>
+<p><strong>Visual Next Token</strong> uses a <strong>custom PPO implementation</strong> because:</p>
+<ul>
+<li>✅ Full control over gradient flow (detached features for policy)</li>
+<li>✅ Tight integration with DINOv2 encoder</li>
+<li>✅ Two-phase training (freeze → fine-tune encoder)</li>
+<li>✅ Custom reward computation (rolling-window accuracy)</li>
+<li>✅ Educational value (understand PPO internals)</li>
+</ul>
+<p><strong>If you want to use an existing framework</strong>, here's how you'd adapt:</p>
+<h4 id="stable-baselines3-example">Stable-Baselines3 Example<a class="headerlink" href="#stable-baselines3-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3</span><span class="w"> </span><span class="kn">import</span> <span class="n">PPO</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">stable_baselines3.common.env_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_vec_env</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">gymnasium</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gym</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 1. Wrap environment in Gymnasium interface</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">GymImageNavEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">predictor</span><span class="p">):</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">ImageNavigationEnv</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">predictor</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            <span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">feature_dim</span><span class="p">,),</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="p">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">action_space</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="k">return</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="p">{}</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        <span class="k">return</span> <span class="n">next_state</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">info</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1"># 2. Train with SB3</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="n">env</span> <span class="o">=</span> <span class="n">GymImageNavEnv</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">predictor</span><span class="p">)</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="n">model</span> <span class="o">=</span> <span class="n">PPO</span><span class="p">(</span><span class="s2">&quot;MlpPolicy&quot;</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">)</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="cleanrl-example">CleanRL Example<a class="headerlink" href="#cleanrl-example" title="Permanent link">&para;</a></h4>
+<p>CleanRL's single-file implementations are excellent for understanding and modifying algorithms. You could adapt <a href="https://github.com/vwxyzjn/cleanrl/blob/master/cleanrl/ppo.py">cleanrl/ppo.py</a> by:</p>
+<ol>
+<li>Replacing environment with <code>ImageNavigationEnv</code></li>
+<li>Modifying reward computation for rolling-window accuracy</li>
+<li>Adding two-phase training logic</li>
+</ol>
+<h3 id="choosing-a-framework">Choosing a Framework<a class="headerlink" href="#choosing-a-framework" title="Permanent link">&para;</a></h3>
+<p><strong>Use Stable-Baselines3 if</strong>:
+- You want quick experiments with standard algorithms
+- You need reliable, battle-tested implementations
+- Documentation and community support are important</p>
+<p><strong>Use CleanRL if</strong>:
+- You want to understand algorithm internals
+- You plan to modify or extend algorithms
+- You prefer minimal dependencies</p>
+<p><strong>Use Ray RLlib if</strong>:
+- You need distributed training across many machines
+- You're running hyperparameter sweeps
+- You're deploying to production</p>
+<p><strong>Use Custom Implementation (like ours) if</strong>:
+- You need tight integration with custom components
+- You want full control over training dynamics
+- You're doing research on novel RL methods</p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <div class="grid cards">
 <ul>
