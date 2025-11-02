@@ -90,11 +90,11 @@ image-ssl/
 
 Our implementation builds on five key papers:
 
-1. **[ICM](references/rl-navigation/01_curiosity_driven_exploration_ICM.md)** - Curiosity-driven exploration (Pathak et al., 2017)
-2. **[RND](references/rl-navigation/02_random_network_distillation_RND.md)** - Random network distillation (Burda et al., 2018)
-3. **[PPO](references/rl-navigation/03_proximal_policy_optimization_PPO.md)** - Policy optimization (Schulman et al., 2017)
-4. **[DINOv2](references/rl-navigation/04_dinov2_visual_features.md)** - Semantic features (Oquab et al., 2023)
-5. **[GAE](references/rl-navigation/05_generalized_advantage_estimation_GAE.md)** - Advantage estimation (Schulman et al., 2015)
+1. **[ICM](references/rl_navigation/01_curiosity_driven_exploration_ICM.md)** - Curiosity-driven exploration (Pathak et al., 2017)
+2. **[RND](references/rl_navigation/02_random_network_distillation_RND.md)** - Random network distillation (Burda et al., 2018)
+3. **[PPO](references/rl_navigation/03_proximal_policy_optimization_PPO.md)** - Policy optimization (Schulman et al., 2017)
+4. **[DINOv2](references/rl_navigation/04_dinov2_visual_features.md)** - Semantic features (Oquab et al., 2023)
+5. **[GAE](references/rl_navigation/05_generalized_advantage_estimation_GAE.md)** - Advantage estimation (Schulman et al., 2015)
 
 ## Next Steps
 
@@ -114,7 +114,7 @@ Our implementation builds on five key papers:
 
     Deep dive into curiosity-driven navigation
 
-    [:octicons-arrow-right-24: Architecture](techniques/rl-navigation/architecture.md)
+    [:octicons-arrow-right-24: Architecture](techniques/rl_navigation/architecture.md)
 
 -   :material-file-document:{ .lg .middle } __Research Papers__
 
@@ -130,6 +130,6 @@ Our implementation builds on five key papers:
 
     Detailed API documentation
 
-    [:octicons-arrow-right-24: API](api/rl-navigation.md)
+    [:octicons-arrow-right-24: API](api/rl_navigation.md)
 
 </div>

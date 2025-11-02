@@ -175,6 +175,6 @@ If the agent doesn't explore much:
 
 ## Next Steps
 
-- [Architecture Deep Dive](../techniques/rl-navigation/architecture.md) - Understand how it works
-- [Training Guide](../techniques/rl-navigation/training.md) - Advanced training strategies
-- [Extensions](../techniques/rl-navigation/extensions.md) - Jump/scout actions
+- [Architecture Deep Dive](../techniques/rl_navigation/architecture.md) - Understand how it works
+- [Training Guide](../techniques/rl_navigation/training.md) - Advanced training strategies
+- [Extensions](../techniques/rl_navigation/extensions.md) - Jump/scout actions

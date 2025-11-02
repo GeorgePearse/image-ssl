@@ -79,4 +79,4 @@ First run will download the selected model to `~/.cache/torch/hub/`.
 ## Next Steps
 
 - [Quick Start Guide](quickstart.md) - Run your first RL navigation experiment
-- [RL Navigation Architecture](../techniques/rl-navigation/architecture.md) - Understand the system design
+- [RL Navigation Architecture](../techniques/rl_navigation/architecture.md) - Understand the system design

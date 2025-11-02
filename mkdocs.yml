@@ -70,6 +70,9 @@ nav:
   - Techniques:
       - RL Navigation:
           - Introduction: techniques/rl_navigation/index.md
+          - Architecture: techniques/rl_navigation/architecture.md
+          - Training Guide: techniques/rl_navigation/training.md
+          - Extensions: techniques/rl_navigation/extensions.md
   - References:
       - Papers Overview: references/index.md
       - RL Navigation Papers:
@@ -78,5 +81,8 @@ nav:
           - PPO: references/rl_navigation/03_proximal_policy_optimization_PPO.md
           - DINOv2: references/rl_navigation/04_dinov2_visual_features.md
           - GAE: references/rl_navigation/05_generalized_advantage_estimation_GAE.md
+  - API Reference:
+      - RL Navigation: api/rl_navigation.md
   - Development:
       - TODO List: development/todo.md
+      - Contributing: development/contributing.md

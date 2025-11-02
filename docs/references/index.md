@@ -20,11 +20,11 @@ These five papers directly inform our implementation:
 
 | Paper | Year | Contribution | Our Implementation |
 |-------|------|--------------|-------------------|
-| [ICM](rl-navigation/01_curiosity_driven_exploration_ICM.md) | 2017 | Curiosity via prediction error | `ForwardDynamicsModel` |
-| [RND](rl-navigation/02_random_network_distillation_RND.md) | 2018 | Random network distillation | `RNDIntrinsicMotivation` |
-| [PPO](rl-navigation/03_proximal_policy_optimization_PPO.md) | 2017 | Clipped policy optimization | `PPOTrainer` |
-| [DINOv2](rl-navigation/04_dinov2_visual_features.md) | 2023 | Semantic visual features | `SemanticEncoder` |
-| [GAE](rl-navigation/05_generalized_advantage_estimation_GAE.md) | 2015 | Advantage estimation | `compute_gae()` |
+| [ICM](rl_navigation/01_curiosity_driven_exploration_ICM.md) | 2017 | Curiosity via prediction error | `ForwardDynamicsModel` |
+| [RND](rl_navigation/02_random_network_distillation_RND.md) | 2018 | Random network distillation | `RNDIntrinsicMotivation` |
+| [PPO](rl_navigation/03_proximal_policy_optimization_PPO.md) | 2017 | Clipped policy optimization | `PPOTrainer` |
+| [DINOv2](rl_navigation/04_dinov2_visual_features.md) | 2023 | Semantic visual features | `SemanticEncoder` |
+| [GAE](rl_navigation/05_generalized_advantage_estimation_GAE.md) | 2015 | Advantage estimation | `compute_gae()` |
 
 ### Quick Reference
 
@@ -100,19 +100,19 @@ Image → DINOv2 → Features
 
 ### The Critical Insights
 
-**1. Flip the Reward ([ICM](rl-navigation/01_curiosity_driven_exploration_ICM.md))**
+**1. Flip the Reward ([ICM](rl_navigation/01_curiosity_driven_exploration_ICM.md))**
 
 Don't predict accurately → predict **poorly**!
 
 High prediction error = novel/surprising = informative
 
-**2. Semantic Space ([DINOv2](rl-navigation/04_dinov2_visual_features.md))**
+**2. Semantic Space ([DINOv2](rl_navigation/04_dinov2_visual_features.md))**
 
 Predict in feature space, not pixel space
 
 Red car ≈ Blue car in embeddings, ≠ in pixels
 
-**3. Stable Updates ([PPO](rl-navigation/03_proximal_policy_optimization_PPO.md))**
+**3. Stable Updates ([PPO](rl_navigation/03_proximal_policy_optimization_PPO.md))**
 
 Clip policy updates to prevent catastrophic collapse
 
@@ -194,7 +194,7 @@ See individual paper pages for full BibTeX.
 
     Detailed summaries with code connections
 
-    [:octicons-arrow-right-24: RL Navigation Papers](rl-navigation/01_curiosity_driven_exploration_ICM.md)
+    [:octicons-arrow-right-24: RL Navigation Papers](rl_navigation/01_curiosity_driven_exploration_ICM.md)
 
 -   :fontawesome-solid-brain:{ .lg .middle } __Understand the Architecture__
 
@@ -202,7 +202,7 @@ See individual paper pages for full BibTeX.
 
     How papers combine into working system
 
-    [:octicons-arrow-right-24: Architecture](../techniques/rl-navigation/architecture.md)
+    [:octicons-arrow-right-24: Architecture](../techniques/rl_navigation/architecture.md)
 
 -   :material-code-braces:{ .lg .middle } __See the Code__
 
@@ -210,6 +210,6 @@ See individual paper pages for full BibTeX.
 
     Implementation details and API
 
-    [:octicons-arrow-right-24: API Reference](../api/rl-navigation.md)
+    [:octicons-arrow-right-24: API Reference](../api/rl_navigation.md)
 
 </div>
