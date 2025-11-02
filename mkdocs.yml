@@ -78,3 +78,5 @@ nav:
           - PPO: references/rl_navigation/03_proximal_policy_optimization_PPO.md
           - DINOv2: references/rl_navigation/04_dinov2_visual_features.md
           - GAE: references/rl_navigation/05_generalized_advantage_estimation_GAE.md
+  - Development:
+      - TODO List: development/todo.md
