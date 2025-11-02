@@ -2,46 +2,52 @@
 
 ## Overview
 
-RL-based image navigation casts the problem of learning semantic paths through images as a **curiosity-driven reinforcement learning** task. An agent learns to navigate using prediction error as an intrinsic curiosity signal in a learned semantic feature space.
+RL-based image navigation learns semantic paths through images by maximizing **prediction accuracy over a rolling window** of future semantic features. An agent learns to navigate by finding paths where it can build up predictive understanding of semantic regions.
 
 ## The Core Idea
 
-### Traditional Approach ❌
+### Traditional Single-Step Prediction ❌
 
-Most approaches try to **predict the next pixel/patch accurately**:
+Most approaches optimize immediate prediction accuracy:
 
 ```
 Reward = -||predicted_pixels - actual_pixels||²
 ```
 
-**Problem:** Agent seeks predictable, boring regions (uniform sky, blank walls)
+**Problem:** Agent seeks trivially predictable regions (uniform sky, blank walls)
 
-### Our Approach ✅
+### Our Approach: Rolling Window Accuracy ✅
 
-We use prediction error as a **curiosity signal** (intrinsic motivation):
+We maximize prediction accuracy over multiple future steps:
 
 ```
-Reward = ||predicted_features - actual_features||²
+Reward = Σ exp(-λ·d) · accuracy_at_distance_d
+       d=1 to horizon
 ```
 
-**Result:** Agent explores information-dense regions!
+**Result:** Agent seeks semantically coherent paths!
 
-Like active learning: high error = "I don't understand this transition yet" = worth exploring. As the forward model learns, agent moves to new informative regions.
+**Example - hitting a car edge:**
+1. Step 0→1: Poor prediction (road → car color jump)
+2. Steps 1→10: Excellent predictions ("more car" → "more car")
+3. High rolling-window accuracy = semantic coherence = information-rich
+
+This is fundamentally different from staying in uniform regions (which have high single-step accuracy but no semantic structure).
 
 ## Why This Works
 
-The key insight: **prediction error correlates with semantic information content**.
+The key insight: **rolling-window prediction accuracy correlates with semantic coherence**.
 
 Consider navigating from a car:
 
-| Next Region | Prediction Error | Information Content |
-|-------------|-----------------|---------------------|
-| More of same car | Low | Low (redundant) |
-| Road beneath | High | High (new object type) |
-| Sky above | High | High (new context) |
-| Another car | High | High (co-occurrence pattern) |
+| Next Region | Initial Error | Subsequent Accuracy | Rolling Window Score |
+|-------------|--------------|---------------------|---------------------|
+| More of same car | Low | High (redundant) | Medium |
+| Road beneath | High | High (new object, then coherent) | High |
+| Sky above | High | High (new context, then coherent) | High |
+| Uniform wall | Low | High (but trivial) | Low (no structure) |
 
-The agent follows **prediction error gradients toward semantically rich transitions**.
+The agent learns to follow **paths with semantic transitions that build predictive understanding**.
 
 ## The "Car Color Problem"
 

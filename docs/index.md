@@ -1,12 +1,12 @@
 # Visual Next Token - RL-Based Image Navigation
 
-Welcome to Visual Next Token! This project implements **curiosity-driven reinforcement learning** for learning semantic paths through images by maximizing prediction error of future visual tokens.
+Welcome to Visual Next Token! This project implements **curiosity-driven reinforcement learning** for learning semantic paths through images by maximizing prediction accuracy over a rolling window of future visual tokens.
 
 ## What is Visual Next Token?
 
-Visual Next Token explores how agents can learn to navigate images by seeking information-dense regions. The core insight: **using prediction error as a curiosity signal guides the agent to explore semantically meaningful paths** - from cars to roads to sky, following co-occurrence patterns in visual scenes.
+Visual Next Token explores how agents can learn to navigate images by seeking semantically coherent paths. The core insight: **maximizing prediction accuracy over a rolling window guides the agent to paths where it can build predictive understanding** - from cars to roads to sky, following co-occurrence patterns in visual scenes.
 
-Like active learning: high prediction error indicates "I don't understand this transition yet" → worth exploring. As the agent learns, it moves to new informative regions.
+**Example**: Hitting a car edge gives poor initial prediction (color jump), but then excellent predictions of "more car" regions. High rolling-window accuracy = semantic coherence = information-rich path.
 
 ## Key Features
 
@@ -54,17 +54,17 @@ python experiments/visualize_rl_paths.py \
 Traditional approaches predict **what** pixels come next. We flip this:
 
 !!! success "Our Approach"
-    **Maximize prediction ERROR** → Agent seeks surprising, information-dense regions
+    **Maximize rolling-window prediction ACCURACY** → Agent seeks semantically coherent paths
 
-    - High prediction error = novel/informative region
-    - Agent learns paths like: car → road + sky → buildings
+    - High multi-step accuracy = understanding semantic regions (car → more car)
+    - Agent learns paths with rich semantic transitions
     - Semantic features (DINOv2) ensure car color doesn't matter
 
-!!! failure "Traditional Approach"
-    **Maximize prediction ACCURACY** → Agent seeks boring, predictable regions
+!!! failure "Traditional Single-Step Approach"
+    **Maximize immediate prediction ACCURACY** → Agent seeks trivially predictable regions
 
-    - High accuracy = uniform sky, blank walls
-    - No incentive to explore semantically rich areas
+    - Stays in uniform sky, blank walls
+    - No incentive to explore semantic structure
 
 ## Project Structure
 

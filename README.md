@@ -8,16 +8,21 @@ Curiosity-driven reinforcement learning for learning semantic paths through imag
 
 ## Overview
 
-Visual Next Token implements a novel approach to image navigation where an agent learns to explore images using **prediction error as an intrinsic curiosity signal** in semantic feature space. This approach guides the agent to seek information-dense regions, naturally following semantic co-occurrence patterns like car → road → sky.
+Visual Next Token implements a novel approach to image navigation where an agent learns to explore images by maximizing **prediction accuracy over a rolling window** of future semantic features. This guides the agent to find semantically coherent paths where it can build predictive understanding, naturally following co-occurrence patterns like car → road → sky.
 
 ### Key Insight
 
-Traditional approaches predict **what** comes next accurately. We use prediction error as an **information signal**:
+We maximize prediction **accuracy over a rolling window** of future steps, not single-step accuracy:
 
-- ❌ **Traditional**: Minimize prediction error → agent seeks boring, predictable regions (uniform sky)
-- ✅ **Our approach**: Use prediction error as curiosity signal → agent explores information-dense regions
+- ❌ **Traditional single-step**: Minimize immediate prediction error → agent seeks boring, predictable regions (uniform sky)
+- ✅ **Our approach**: Maximize multi-step prediction accuracy → agent seeks semantically coherent paths
 
-Like active learning: high prediction error indicates "I don't understand this transition yet" → worth exploring. As the forward model learns, error decreases and agent moves to new informative regions.
+**Example**: When agent hits a car edge:
+1. Initial prediction is poor (color jump from road)
+2. But THEN predictions become accurate ("more car" regions)
+3. High rolling-window accuracy = understanding semantic coherence = information-rich path
+
+This naturally drives exploration: the agent learns to follow paths where it can **build up predictive understanding** of semantic regions, not just stay in trivially predictable areas.
 
 ### The "Car Color Problem"
 
