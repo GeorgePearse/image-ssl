@@ -7,6 +7,12 @@ This library implements various walk strategies to traverse images in content-aw
 - Saliency-based walks
 - Superpixel-based walks
 
+Design Philosophy:
+    Walks naturally terminate when they exhaust their local region or hit dead ends.
+    This is intentional - creating coherent "token sequences" for specific visual features
+    rather than forcing arbitrary full-image coverage. For complete coverage, use multiple
+    walks with different starting points or superpixel-based orderings.
+
 Usage:
     from utils.image_walker import ImageWalker, BrightnessGradientWalk
 

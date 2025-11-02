@@ -8,6 +8,21 @@ This library explores the question: **"How do we order pixels/regions in an imag
 
 It implements various content-aware walk strategies that traverse images following gradients, saliency, edges, or superpixel structures.
 
+### Design Philosophy: Natural Termination
+
+**Walks are allowed to naturally terminate** when they exhaust their local region or reach dead ends. This is intentional and semantically meaningful:
+
+- A gradient-following walk might trace a single object boundary and stop when it completes the contour
+- This creates **coherent "token sequences"** for specific visual features rather than forcing arbitrary full-image coverage
+- Natural termination reflects the semantic structure of the image
+
+**For full image coverage**, use:
+1. **Multiple walks** with different starting points (sample grid or random starts)
+2. **Superpixel-based orderings** which guarantee complete coverage
+3. **Hybrid approaches** combining multiple strategies
+
+The goal is not necessarily to visit every pixel, but to generate **meaningful sequential traversals** that capture visual structure.
+
 ## Quick Start
 
 ```python
