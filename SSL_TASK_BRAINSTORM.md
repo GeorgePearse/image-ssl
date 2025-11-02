@@ -2,6 +2,205 @@
 
 Comprehensive collection of pretext tasks for learning rich visual representations from raw image and video data.
 
+## The Core Question: Image Equivalents to "Next Token Prediction"
+
+**Key Insight**: Next token prediction is the foundation of language model success. What's the vision equivalent?
+
+### Why Next Token Prediction Works for Language
+
+1. **Natural sequential structure**: Text has inherent left-to-right ordering
+2. **Self-supervised**: Every token provides supervision for the next
+3. **Scales perfectly**: More data = more training signal
+4. **Forces semantic understanding**: Can't predict next word without understanding context
+5. **Autoregressive**: Builds on previous predictions
+
+### The Image Challenge: Constructing Sequential Tokens
+
+**Problem**: Images are inherently 2D/3D spatial structures, not sequential. How do we impose or discover a meaningful ordering?
+
+### Approaches to Sequential Token Construction
+
+#### 1. **Raster/Scanline Order** (Naive but functional)
+```
+Predict pixels in fixed order: left→right, top→bottom
+```
+- **Used by**: PixelCNN, PixelRNN
+- **Pros**: Simple, deterministic, truly autoregressive
+- **Cons**:
+  - Very low-level (pixel-by-pixel is slow and noisy)
+  - Arbitrary ordering doesn't match human perception
+  - Ignores semantic structure
+  - Doesn't capture long-range dependencies well
+
+#### 2. **Coarse-to-Fine Ordering** (Hierarchical)
+```
+Level 1: Predict 8x8 image
+Level 2: Predict 16x16 given 8x8
+Level 3: Predict 32x32 given 16x16
+...
+```
+- **Used by**: PixelCNN++, VQ-VAE-2, some diffusion models
+- **Pros**:
+  - More aligned with perception (gist first, details later)
+  - Hierarchical structure
+  - More efficient than raster order
+- **Cons**:
+  - Still somewhat arbitrary
+  - Fixed hierarchy may not match semantic importance
+
+#### 3. **Superpixel Sequential Prediction** (Semantic ordering)
+```
+1. Segment image into superpixels
+2. Order superpixels by: saliency, size, position, or learned importance
+3. Predict each superpixel given previous ones
+```
+- **Pros**:
+  - More semantic than pixels
+  - Flexible ordering strategies
+  - Can use SAM for high-quality segments
+- **Cons**:
+  - How to order superpixels meaningfully?
+  - Computationally expensive
+
+**Ordering strategies**:
+- **Saliency-based**: Most salient regions first (objects before background)
+- **Size-based**: Large regions first, details later
+- **Distance-based**: Center→outward or top→bottom
+- **Random but consistent**: Fixed random ordering per image
+- **Learned ordering**: Model learns optimal prediction order
+
+#### 4. **Video Frame Prediction** (Natural temporal order) ⭐
+```
+Frame 1 → Frame 2 → Frame 3 → ...
+```
+- **Used by**: Video prediction models, world models
+- **Pros**:
+  - **Natural sequential structure** (this is the killer advantage!)
+  - Inherent ordering from time
+  - Forces understanding of motion, physics, causality
+  - Scales perfectly with video data
+- **Cons**:
+  - Requires video data (but it's abundant!)
+  - More compute intensive
+
+**This might be the true image equivalent to next token prediction!**
+
+#### 5. **Patch/Region Autoregressive** (Block-wise)
+```
+Divide into NxN patches, predict in some order
+```
+- **Used by**: Image GPT, Parti, MUSE
+- **Pros**:
+  - More efficient than pixel-level
+  - Can use learned patch embeddings (like ViT)
+  - Balances granularity and efficiency
+- **Cons**:
+  - Still needs ordering scheme
+  - Patch boundaries may break objects
+
+**Ordering options**:
+- Raster (like iGPT)
+- Spiral from center
+- Random shuffle then predict
+- Hierarchical (quadtree)
+
+#### 6. **Latent Space Autoregressive** (Abstract tokens)
+```
+1. Encode image to discrete latent codes (VQ-VAE)
+2. Predict latent codes autoregressively
+3. Decode to pixels
+```
+- **Used by**: DALL-E, Parti, VQ-GAN + Transformer
+- **Pros**:
+  - Higher-level semantic tokens
+  - More efficient than pixel space
+  - Tokens capture meaningful patterns
+  - Can train large transformers on these tokens
+- **Cons**:
+  - Requires good encoder (VQ-VAE, VQ-GAN)
+  - Two-stage training
+  - Still needs latent code ordering
+
+#### 7. **Attention-Based Dynamic Ordering** (Let model decide)
+```
+Model learns which regions to predict next based on context
+```
+- **Used by**: Some non-autoregressive models, diffusion models
+- **Pros**:
+  - Flexible, adaptive to image content
+  - Could discover optimal ordering
+- **Cons**:
+  - Not truly autoregressive
+  - More complex training
+
+#### 8. **Masked Token Prediction** (BERT-style, not strictly autoregressive)
+```
+Randomly mask tokens, predict them from unmasked context
+```
+- **Used by**: MAE, BEiT, SimMIM
+- **Pros**:
+  - Very effective in practice
+  - Bidirectional context (better than pure autoregressive?)
+  - Efficient training
+- **Cons**:
+  - Not autoregressive (can't generate sequentially)
+  - Less like "next token prediction"
+
+### Comparative Analysis
+
+| Approach | Sequential? | Semantic? | Efficient? | Natural Order? | Like Next Token? |
+|----------|-------------|-----------|------------|----------------|------------------|
+| Raster order | ✅ Yes | ❌ No | ❌ Slow | ❌ No | ⭐⭐ Somewhat |
+| Coarse-to-fine | ✅ Yes | ⚠️ Partial | ✅ Better | ⚠️ Partial | ⭐⭐⭐ Good |
+| Superpixel sequence | ✅ Yes | ✅ Yes | ⚠️ Medium | ⚠️ Depends | ⭐⭐⭐ Good |
+| **Video frames** | ✅ **Yes** | ✅ **Yes** | ✅ **Good** | ✅ **Yes!** | ⭐⭐⭐⭐⭐ **Best!** |
+| Patch autoregressive | ✅ Yes | ⚠️ Partial | ✅ Good | ❌ No | ⭐⭐⭐ Good |
+| Latent autoregressive | ✅ Yes | ✅ Yes | ✅ Good | ❌ No | ⭐⭐⭐⭐ Great |
+| Masked prediction | ❌ No | ✅ Yes | ✅ Great | N/A | ⭐⭐ Different |
+
+### Recommendation: Multi-Scale Video Frame Prediction
+
+**Best analogy to next token prediction for images:**
+
+```python
+# Temporal + Hierarchical
+for frame in video:
+    # Coarse-to-fine per frame
+    predict_8x8_features(frame | previous_frames)
+    predict_16x16_features(frame | previous_frames + 8x8)
+    predict_32x32_features(frame | previous_frames + 16x16)
+    # ...
+```
+
+**Why this is optimal**:
+1. ✅ Natural sequential order (time)
+2. ✅ Hierarchical structure (coarse-to-fine)
+3. ✅ Semantic understanding required
+4. ✅ Scalable with data
+5. ✅ Autoregressive like language
+6. ✅ Forces learning of dynamics, physics, causality
+
+### Alternative: Latent Code Autoregressive (Image GPT-style)
+
+For static images without video:
+```python
+# 1. Learn discrete codebook (VQ-VAE)
+image → encoder → discrete_codes (e.g., 32x32 tokens)
+
+# 2. Transformer predicts codes autoregressively
+for position in range(32*32):
+    predict next_code from previous_codes
+
+# 3. Decode to image
+codes → decoder → image
+```
+
+**Why this works**:
+- High-level semantic tokens (not pixels)
+- Can use transformer architecture (like GPT)
+- Proven effective (DALL-E, Parti)
+- Still needs ordering scheme for the codes
+
 ## Image-Based Tasks
 
 ### 1. Superpixel-Based Masking (HIGHLY RECOMMENDED)
