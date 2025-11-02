@@ -186,25 +186,92 @@ See individual paper pages for full BibTeX.
 
 ## Python RL Frameworks
 
-When implementing RL systems, you can choose from several mature frameworks. Here are the most popular:
+When implementing RL systems, you can choose from several mature frameworks. This comprehensive list is sourced from [awesome-deep-rl](https://github.com/kengz/awesome-deep-rl), sorted by GitHub stars.
 
-### Production-Ready Frameworks
+### Most Popular Frameworks (10K+ Stars)
 
-| Framework | Strengths | Use Case | Algorithms |
-|-----------|-----------|----------|------------|
-| **[Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3)** | Easy to use, well-documented, PyTorch-based | Best for getting started, research | PPO, A2C, SAC, TD3, DQN |
-| **[Ray RLlib](https://docs.ray.io/en/latest/rllib/index.html)** | Distributed training, production-ready, scalable | Large-scale deployments | PPO, IMPALA, APPO, DQN, SAC |
-| **[CleanRL](https://github.com/vwxyzjn/cleanrl)** | Single-file implementations, highly readable | Learning RL, research, modifications | PPO, DQN, SAC, TD3 |
-| **[Tianshou](https://github.com/thu-ml/tianshou)** | Fast, modular, elegant API | Research, custom algorithms | PPO, SAC, DQN, DDPG, A2C |
+| Framework | Stars | Description |
+|-----------|-------|-------------|
+| **[Ray RLlib](https://github.com/ray-project/ray)** | 39.6K ★ | An open-source library for reinforcement learning that offers both high scalability and a unified API for a variety of applications |
+| **[Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)** | 18.8K ★ | Unity Machine Learning Agents Toolkit - train agents in Unity environments |
+| **[OpenAI Baselines](https://github.com/openai/baselines)** | 16.5K ★ | High-quality implementations of reinforcement learning algorithms (now superseded by Stable-Baselines3) |
+| **[Google Dopamine](https://github.com/google/dopamine)** | 10.8K ★ | A research framework for fast prototyping of reinforcement learning algorithms |
 
-### Specialized Frameworks
+### Widely-Used Frameworks (3K-10K Stars)
 
-| Framework | Focus | Best For |
-|-----------|-------|----------|
-| **[Gymnasium](https://gymnasium.farama.org/)** | Environment interface (successor to OpenAI Gym) | Creating custom environments |
-| **[PettingZoo](https://pettingzoo.farama.org/)** | Multi-agent RL | Competitive/cooperative agents |
-| **[Sample Factory](https://github.com/alex-petrenko/sample-factory)** | High-throughput training | Very fast environments (games) |
-| **[RLlib Trainer](https://docs.ray.io/en/latest/rllib/index.html)** | Hyperparameter tuning at scale | Large experiments, tuning |
+| Framework | Stars | Description |
+|-----------|-------|-------------|
+| **[Tianshou](https://github.com/thu-ml/tianshou)** | 8.9K ★ | Reinforcement learning platform based on pure PyTorch with elegant API |
+| **[DeepMind OpenSpiel](https://github.com/deepmind/open_spiel)** | 4.8K ★ | Environments and algorithms for research in general reinforcement learning and search/planning in games |
+| **[Stable Baselines](https://github.com/hill-a/stable-baselines)** | 4.3K ★ | Fork of OpenAI Baselines with improvements (now use Stable-Baselines3 instead) |
+| **[pytorch-a2c-ppo-acktr-gail](https://github.com/ikostrikov/pytorch-a2c-ppo-acktr-gail)** | 3.8K ★ | PyTorch implementations of A2C, PPO, ACKTR, and GAIL |
+| **[DeepMind Acme](https://github.com/deepmind/acme)** | 3.8K ★ | Research framework for reinforcement learning with distributed training support |
+| **[Facebook ReAgent](https://github.com/facebookresearch/ReAgent)** | 3.7K ★ | Platform for Reasoning systems (Reinforcement Learning, Contextual Bandits, etc.) |
+| **[ShangtongZhang DeepRL](https://github.com/ShangtongZhang/DeepRL)** | 3.4K ★ | Modularized implementation of Deep RL algorithms in PyTorch |
+| **[Catalyst](https://github.com/catalyst-team/catalyst)** | 3.4K ★ | Accelerated deep learning and reinforcement learning framework |
+| **[TensorForce](https://github.com/tensorforce/tensorforce)** | 3.3K ★ | TensorFlow library for applied reinforcement learning |
+| **[DeepMind TRFL](https://github.com/deepmind/trfl)** | 3.1K ★ | TensorFlow Reinforcement Learning - building blocks for RL agents |
+| **[PyTorch TorchRL](https://github.com/pytorch/rl)** | 3.1K ★ | Official PyTorch library for reinforcement learning |
+| **[TensorFlow Agents](https://github.com/tensorflow/agents)** | 3.0K ★ | Library for reinforcement learning in TensorFlow |
+
+### Established Frameworks (1K-3K Stars)
+
+| Framework | Stars | Description |
+|-----------|-------|-------------|
+| **[RLkit](https://github.com/rail-berkeley/rlkit)** | 2.8K ★ | Reinforcement learning framework and algorithms in PyTorch (UC Berkeley) |
+| **[NervanaSystems Coach](https://github.com/NervanaSystems/coach)** | 2.3K ★ | Reinforcement Learning Coach by Intel AI Lab |
+| **[rlpyt](https://github.com/astooke/rlpyt)** | 2.3K ★ | Reinforcement Learning in PyTorch with efficient implementations |
+| **[Facebook ELF](https://github.com/facebookresearch/ELF)** | 2.1K ★ | Platform for game research with AlphaGoZero/AlphaZero reimplementation |
+| **[garage](https://github.com/rlworkgroup/garage)** | 2.0K ★ | Toolkit for reproducible reinforcement learning research |
+| **[MAgent](https://github.com/geek-ai/MAgent)** | 1.7K ★ | Platform for many-agent reinforcement learning |
+| **[d3rlpy](https://github.com/takuseno/d3rlpy)** | 1.6K ★ | Offline deep reinforcement learning library |
+| **[Softlearning](https://github.com/rail-berkeley/softlearning)** | 1.4K ★ | Framework for training maximum entropy policies in continuous domains (UC Berkeley) |
+| **[SLM Lab](https://github.com/kengz/SLM-Lab)** | 1.3K ★ | Modular deep reinforcement learning framework in PyTorch |
+| **[ChainerRL](https://github.com/chainer/chainerrl)** | 1.2K ★ | Deep reinforcement learning library built on top of Chainer |
+
+### Emerging & Specialized Frameworks (Under 1K Stars)
+
+| Framework | Stars | Description |
+|-----------|-------|-------------|
+| **[MushroomRL](https://github.com/MushroomRL/mushroom-rl)** | 913 ★ | Python library for reinforcement learning experiments |
+| **[skrl](https://github.com/Toni-SM/skrl)** | 893 ★ | Modular RL library (PyTorch/JAX) with NVIDIA Isaac Gym, Omniverse support |
+| **[RLtools](https://github.com/rl-tools/rl-tools)** | 886 ★ | Fastest deep RL library for continuous control in pure C++ (Python bindings available) |
+| **[AgileRL](https://github.com/AgileRL/AgileRL)** | 839 ★ | Deep RL library focused on improving development by introducing **RLOps** - MLOps for reinforcement learning. Features evolutionary hyperparameter optimization and accelerated training |
+| **[OpenRL](https://github.com/OpenRL-Lab/openrl)** | 785 ★ | Open-source general reinforcement learning research framework |
+| **[Rofunc](https://github.com/Skylark0924/Rofunc)** | 668 ★ | Full-process Python library for robot learning from demonstration and robot manipulation |
+| **[reaver](https://github.com/inoryy/reaver)** | 561 ★ | Modular deep RL framework focused on StarCraft II tasks |
+| **[pytorch-rl](https://github.com/navneet-nmk/pytorch-rl)** | 451 ★ | Model-free deep reinforcement learning algorithms in PyTorch |
+| **[RLgraph](https://github.com/rlgraph/rlgraph)** | 323 ★ | Modular computation graphs for deep reinforcement learning |
+| **[K-Scale ksim-gym](https://github.com/kscalelabs/ksim-gym)** | 303 ★ | Making robots useful with RL - built on top of K-Sim |
+| **[Maze](https://github.com/enlite-ai/maze)** | 283 ★ | Application-oriented deep RL framework for real-world decision problems |
+| **[K-Scale ksim](https://github.com/kscalelabs/ksim)** | 211 ★ | Modular framework for training policies in simulation |
+
+### Additional Libraries
+
+| Framework | Stars | Description |
+|-----------|-------|-------------|
+| **[DI-engine](https://github.com/opendilab/DI-engine)** | 3.5K ★ | Generalized decision intelligence engine supporting various deep RL algorithms |
+| **UMass Autonomous Learning Library** | - | PyTorch library for building deep RL agents (see [awesome-deep-rl](https://github.com/kengz/awesome-deep-rl)) |
+| **vel** | - | Research on bringing velocity to deep-learning (see [awesome-deep-rl](https://github.com/kengz/awesome-deep-rl)) |
+
+### Quick Reference: Top Picks by Use Case
+
+| Use Case | Recommended Framework | Why? |
+|----------|----------------------|------|
+| **Getting Started** | Stable-Baselines3 | Best docs, easiest API, PyTorch-based |
+| **Production/Scale** | Ray RLlib | Battle-tested, distributed, 39K+ stars |
+| **RLOps/MLOps** | **AgileRL** | **Evolutionary hyperparameter optimization, accelerated training, RL-specific ops** |
+| **Learning RL** | CleanRL | Single-file implementations, highly readable |
+| **Research** | Tianshou, Acme | Fast, modular, well-maintained |
+| **Game Environments** | Unity ML-Agents, OpenSpiel | Game-specific optimizations |
+| **Offline RL** | d3rlpy | Specialized for offline/batch RL |
+| **Robotics** | skrl, Rofunc | NVIDIA Isaac support, robot-specific |
+| **Multi-Agent** | MAgent, PettingZoo | Many-agent scenarios |
+| **Pure Performance** | RLtools | C++ implementation, fastest |
+| **Understanding Code** | CleanRL, DeepRL | Clean implementations, educational |
+| **Hyperparameter Tuning** | AgileRL, Ray RLlib | Evolutionary optimization / distributed tuning |
+
+---
 
 ### Our Implementation
 
@@ -270,15 +337,38 @@ CleanRL's single-file implementations are excellent for understanding and modify
 - You plan to modify or extend algorithms
 - You prefer minimal dependencies
 
+**Use AgileRL if**:
+- You want evolutionary hyperparameter optimization built-in
+- You need RLOps workflows (experiment tracking, reproducibility)
+- You want accelerated training with automatic tuning
+- You're building production RL pipelines
+
 **Use Ray RLlib if**:
 - You need distributed training across many machines
-- You're running hyperparameter sweeps
-- You're deploying to production
+- You're running hyperparameter sweeps at scale
+- You're deploying to production with complex orchestration
 
 **Use Custom Implementation (like ours) if**:
 - You need tight integration with custom components
 - You want full control over training dynamics
 - You're doing research on novel RL methods
+
+---
+
+### Additional Resources
+
+For the complete list of deep RL resources including papers, tutorials, and more frameworks, see:
+
+**[awesome-deep-rl](https://github.com/kengz/awesome-deep-rl)** - A curated list of awesome Deep RL resources
+
+This comprehensive repository includes:
+- Research papers organized by topic
+- Additional frameworks and libraries
+- Tutorials and courses
+- Benchmarks and environments
+- Books and documentation
+
+**Note**: Star counts were fetched on 2025-11-02 and may have changed since then.
 
 ## Next Steps
 
