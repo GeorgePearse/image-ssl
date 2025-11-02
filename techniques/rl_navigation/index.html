@@ -1331,7 +1331,7 @@
 
 <h1 id="rl-based-image-navigation">RL-Based Image Navigation<a class="headerlink" href="#rl-based-image-navigation" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>RL-based image navigation casts the problem of learning semantic paths through images as a <strong>curiosity-driven reinforcement learning</strong> task. An agent learns to navigate by maximizing prediction error in a learned semantic feature space.</p>
+<p>RL-based image navigation casts the problem of learning semantic paths through images as a <strong>curiosity-driven reinforcement learning</strong> task. An agent learns to navigate using prediction error as an intrinsic curiosity signal in a learned semantic feature space.</p>
 <h2 id="the-core-idea">The Core Idea<a class="headerlink" href="#the-core-idea" title="Permanent link">&para;</a></h2>
 <h3 id="traditional-approach">Traditional Approach ❌<a class="headerlink" href="#traditional-approach" title="Permanent link">&para;</a></h3>
 <p>Most approaches try to <strong>predict the next pixel/patch accurately</strong>:</p>
@@ -1339,10 +1339,11 @@
 </code></pre></div>
 <p><strong>Problem:</strong> Agent seeks predictable, boring regions (uniform sky, blank walls)</p>
 <h3 id="our-approach">Our Approach ✅<a class="headerlink" href="#our-approach" title="Permanent link">&para;</a></h3>
-<p>We flip the reward: <strong>maximize prediction ERROR</strong>:</p>
+<p>We use prediction error as a <strong>curiosity signal</strong> (intrinsic motivation):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Reward = ||predicted_features - actual_features||²
 </code></pre></div>
-<p><strong>Result:</strong> Agent seeks surprising, information-dense regions!</p>
+<p><strong>Result:</strong> Agent explores information-dense regions!</p>
+<p>Like active learning: high error = "I don't understand this transition yet" = worth exploring. As the forward model learns, agent moves to new informative regions.</p>
 <h2 id="why-this-works">Why This Works<a class="headerlink" href="#why-this-works" title="Permanent link">&para;</a></h2>
 <p>The key insight: <strong>prediction error correlates with semantic information content</strong>.</p>
 <p>Consider navigating from a car:</p>
@@ -1377,7 +1378,7 @@
 </tr>
 </tbody>
 </table>
-<p>The agent learns that <strong>high prediction error = interesting semantic transitions</strong>.</p>
+<p>The agent follows <strong>prediction error gradients toward semantically rich transitions</strong>.</p>
 <h2 id="the-car-color-problem">The "Car Color Problem"<a class="headerlink" href="#the-car-color-problem" title="Permanent link">&para;</a></h2>
 <p>A critical challenge: <strong>cars can be any color</strong>.</p>
 <h3 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>

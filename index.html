@@ -1124,7 +1124,8 @@
 <h1 id="visual-next-token-rl-based-image-navigation">Visual Next Token - RL-Based Image Navigation<a class="headerlink" href="#visual-next-token-rl-based-image-navigation" title="Permanent link">&para;</a></h1>
 <p>Welcome to Visual Next Token! This project implements <strong>curiosity-driven reinforcement learning</strong> for learning semantic paths through images by maximizing prediction error of future visual tokens.</p>
 <h2 id="what-is-visual-next-token">What is Visual Next Token?<a class="headerlink" href="#what-is-visual-next-token" title="Permanent link">&para;</a></h2>
-<p>Visual Next Token explores how agents can learn to navigate images by seeking information-dense regions. The core insight: <strong>an agent that maximizes prediction error (not accuracy) will naturally explore semantically meaningful paths</strong> - from cars to roads to sky, following co-occurrence patterns in visual scenes.</p>
+<p>Visual Next Token explores how agents can learn to navigate images by seeking information-dense regions. The core insight: <strong>using prediction error as a curiosity signal guides the agent to explore semantically meaningful paths</strong> - from cars to roads to sky, following co-occurrence patterns in visual scenes.</p>
+<p>Like active learning: high prediction error indicates "I don't understand this transition yet" → worth exploring. As the agent learns, it moves to new informative regions.</p>
 <h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <h3 id="rl-based-image-navigation">🧠 RL-Based Image Navigation<a class="headerlink" href="#rl-based-image-navigation" title="Permanent link">&para;</a></h3>
 <ul>
