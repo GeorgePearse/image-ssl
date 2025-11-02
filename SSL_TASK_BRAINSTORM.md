@@ -21,16 +21,81 @@ Comprehensive collection of pretext tasks for learning rich visual representatio
 ### Approaches to Sequential Token Construction
 
 #### 1. **Raster/Scanline Order** (Naive but functional)
+
+**What is Raster Ordering?**
+
+Raster ordering (also called scanline order) is how old CRT monitors drew images: left-to-right, top-to-bottom, like reading English text.
+
 ```
-Predict pixels in fixed order: left→right, top→bottom
+Visual Example:
+
+Image (4x4):        Raster Order:
+
+A B C D            1→ 2→ 3→ 4
+E F G H            5→ 6→ 7→ 8
+I J K L            9→10→11→12
+M N O P            13→14→15→16
+
+Prediction sequence: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P
 ```
-- **Used by**: PixelCNN, PixelRNN
-- **Pros**: Simple, deterministic, truly autoregressive
-- **Cons**:
-  - Very low-level (pixel-by-pixel is slow and noisy)
-  - Arbitrary ordering doesn't match human perception
-  - Ignores semantic structure
-  - Doesn't capture long-range dependencies well
+
+**How it works for next token prediction**:
+```python
+# Flatten image to 1D sequence in raster order
+for row in range(height):
+    for col in range(width):
+        pixel = image[row, col]
+        # Predict this pixel from all previous pixels
+        prediction = model(pixels_so_far)
+        pixels_so_far.append(pixel)
+
+# Position 0: Predict pixel A (no context)
+# Position 1: Predict B given A
+# Position 2: Predict C given A, B
+# Position 5: Predict F given A, B, C, D, E
+# etc.
+```
+
+**Why "Raster"?**
+
+Named after raster graphics/displays:
+- CRT electron beam scans left→right (horizontal sweep)
+- Moves down one line (vertical refresh)
+- Repeats until full screen drawn
+- Same pattern: linear scan of 2D grid
+
+**Advantages**:
+- ✅ Simple to implement
+- ✅ Deterministic (same order every time)
+- ✅ Truly autoregressive (strict causal ordering)
+- ✅ No computation needed (just indexing)
+- ✅ Easy to batch (all images use same ordering)
+
+**Disadvantages**:
+- ❌ **Arbitrary**: No semantic meaning to the order
+- ❌ **Doesn't match perception**: Humans don't process images left→right, top→bottom
+- ❌ **Ignores structure**: Object boundaries, semantic regions ignored
+- ❌ **Long-range dependencies**: Pixel at bottom-right very far from top-left
+- ❌ **Slow at pixel level**: 256×256 = 65K sequential predictions!
+- ❌ **Context limitations**: Can only use pixels above and to the left (limited receptive field)
+
+**Visual Context Problem**:
+```
+When predicting pixel X:
+
+✅ Available context:    ❌ Not available yet:
+A B C D
+E F G X                  ? ? ?
+                         ? ? ?
+                         ? ? ?
+
+Missing: right side, bottom half of image!
+Can't use future context (violates causality)
+```
+
+- **Used by**: PixelCNN, PixelRNN, ImageGPT (with patches)
+- **Why used**: Simplicity, truly autoregressive
+- **Why problematic**: Arbitrary, doesn't match how we perceive images
 
 #### 2. **Coarse-to-Fine Ordering** (Hierarchical)
 ```
