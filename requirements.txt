@@ -1,0 +1,17 @@
+# Core deep learning
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+
+# Data and visualization
+matplotlib>=3.7.0
+pillow>=9.5.0
+tqdm>=4.65.0
+
+# Experiment tracking (optional)
+tensorboard>=2.12.0
+wandb>=0.15.0
+
+# Utilities
+pyyaml>=6.0
+scikit-learn>=1.2.0
