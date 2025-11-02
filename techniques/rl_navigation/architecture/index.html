@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../02_random_network_distillation_RND/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../04_dinov2_visual_features/">
+        <link rel="next" href="../training/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>PPO - Visual Next Token - RL-Based Image Navigation</title>
+        <title>Architecture - Visual Next Token - RL-Based Image Navigation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proximal-policy-optimization-algorithms-ppo" class="md-skip">
+        <a href="#architecture-deep-dive" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PPO
+              Architecture
             
           </span>
         </div>
@@ -260,6 +260,8 @@
   
   
   
+    
+  
   
     
     
@@ -267,11 +269,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../techniques/rl_navigation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -290,13 +294,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../references/" class="md-tabs__link">
           
   
   
@@ -517,28 +519,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -551,7 +556,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Techniques
@@ -562,28 +567,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
             
   
   
@@ -596,7 +604,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             RL Navigation
@@ -610,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techniques/rl_navigation/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -630,10 +638,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../techniques/rl_navigation/architecture/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -644,6 +674,185 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-semantic-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Semantic Encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-navigation-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Navigation Policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-forward-dynamics-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Forward Dynamics Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-image-navigation-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Image Navigation Environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-design-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Design Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Design Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient-decoupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Decoupling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-phase-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Phase Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Cost
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -656,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techniques/rl_navigation/training/" class="md-nav__link">
+      <a href="../training/" class="md-nav__link">
         
   
   
@@ -679,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techniques/rl_navigation/extensions/" class="md-nav__link">
+      <a href="../extensions/" class="md-nav__link">
         
   
   
@@ -714,31 +923,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -751,7 +957,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             References
@@ -765,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../references/" class="md-nav__link">
         
   
   
@@ -785,31 +991,28 @@
                 
   
   
-    
   
   
-  
     
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
         
           
-          
         
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
@@ -822,7 +1025,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             RL Navigation Papers
@@ -836,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_curiosity_driven_exploration_ICM/" class="md-nav__link">
+      <a href="../../../references/rl_navigation/01_curiosity_driven_exploration_ICM/" class="md-nav__link">
         
   
   
@@ -859,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_random_network_distillation_RND/" class="md-nav__link">
+      <a href="../../../references/rl_navigation/02_random_network_distillation_RND/" class="md-nav__link">
         
   
   
@@ -879,32 +1082,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    PPO
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../references/rl_navigation/03_proximal_policy_optimization_PPO/" class="md-nav__link">
         
   
   
@@ -915,131 +1096,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#paper-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Paper Information
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstract
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-contributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Contributions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevance-to-our-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relevance to Our Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relevance to Our Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ppo-clipped-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      PPO Clipped Objective
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#complete-ppo-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      Complete PPO Update
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ppo-hyperparameters-configpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      PPO Hyperparameters (config.py)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-ppo-for-image-navigation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why PPO for Image Navigation?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#training-loop-trainerpy295-343" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training Loop (trainer.py:295-343)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1052,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_dinov2_visual_features/" class="md-nav__link">
+      <a href="../../../references/rl_navigation/04_dinov2_visual_features/" class="md-nav__link">
         
   
   
@@ -1075,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_generalized_advantage_estimation_GAE/" class="md-nav__link">
+      <a href="../../../references/rl_navigation/05_generalized_advantage_estimation_GAE/" class="md-nav__link">
         
   
   
@@ -1306,100 +1362,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#paper-information" class="md-nav__link">
+  <a href="#system-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Paper Information
+      System Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authors" class="md-nav__link">
+  <a href="#component-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Authors
+      Component Details
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstract
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-contributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Contributions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevance-to-our-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relevance to Our Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relevance to Our Implementation">
+    <nav class="md-nav" aria-label="Component Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ppo-clipped-objective" class="md-nav__link">
+  <a href="#1-semantic-encoder" class="md-nav__link">
     <span class="md-ellipsis">
-      PPO Clipped Objective
+      1. Semantic Encoder
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#complete-ppo-update" class="md-nav__link">
+  <a href="#2-navigation-policy" class="md-nav__link">
     <span class="md-ellipsis">
-      Complete PPO Update
+      2. Navigation Policy
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ppo-hyperparameters-configpy" class="md-nav__link">
+  <a href="#3-forward-dynamics-model" class="md-nav__link">
     <span class="md-ellipsis">
-      PPO Hyperparameters (config.py)
+      3. Forward Dynamics Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-ppo-for-image-navigation" class="md-nav__link">
+  <a href="#4-image-navigation-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Why PPO for Image Navigation?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#training-loop-trainerpy295-343" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training Loop (trainer.py:295-343)
+      4. Image Navigation Environment
     </span>
   </a>
   
@@ -1407,6 +1418,105 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Loop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-design-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Design Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Design Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient-decoupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Decoupling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-phase-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Phase Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Efficiency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Cost
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
   
 </li>
       
@@ -1429,107 +1539,151 @@
   
 
 
-<h1 id="proximal-policy-optimization-algorithms-ppo">Proximal Policy Optimization Algorithms (PPO)<a class="headerlink" href="#proximal-policy-optimization-algorithms-ppo" title="Permanent link">&para;</a></h1>
-<h2 id="paper-information">Paper Information<a class="headerlink" href="#paper-information" title="Permanent link">&para;</a></h2>
-<p><strong>arXiv ID:</strong> 1707.06347
-<strong>Category:</strong> Computer Science &gt; Machine Learning (cs.LG)
-<strong>Submitted:</strong> July 20, 2017
-<strong>Last Revised:</strong> August 28, 2017 (v2)</p>
-<h2 id="authors">Authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h2>
+<h1 id="architecture-deep-dive">Architecture Deep Dive<a class="headerlink" href="#architecture-deep-dive" title="Permanent link">&para;</a></h1>
+<p><em>This page provides detailed architectural information for the RL navigation system.</em></p>
+<h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
+<p>The Visual Next Token system consists of several key components working together to enable curiosity-driven image navigation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                    Image (RGB)                       │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│                  (H × W × 3)                         │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└────────────────────┬────────────────────────────────┘
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                     │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                     ▼
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>          ┌──────────────────────┐
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>          │  Semantic Encoder    │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          │     (DINOv2)         │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>          │  Frozen → Fine-tuned │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>          └──────────┬───────────┘
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                     │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>           ┌─────────┴─────────┐
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>           │                   │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>           │    Features (z)   │ ◄── Detach for policy!
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>           │                   │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>           └─────────┬─────────┘
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                     │
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>         ┌───────────┴───────────┐
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>         │                       │
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>         ▼                       ▼
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  ┌─────────────┐     ┌──────────────────┐
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  │   Policy    │     │ Forward Dynamics │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  │    (π)      │     │      (P)         │
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  │  Actor-     │     │  Predict next    │
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  │  Critic     │     │  features from   │
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  │             │     │  current + action│
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  └──────┬──────┘     └────────┬─────────┘
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>         │                     │
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>         │ Action              │ Predicted z&#39;
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>         ▼                     ▼
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>  ┌────────────────────────────────────┐
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>  │   Environment Step                 │
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>  │   - Execute action (move)          │
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>  │   - Get actual next features (z&#39;)  │
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>  │   - Compute rolling-window         │
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>  │     accuracy reward                │
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>  └────────┬───────────────────────────┘
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>           │
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>           ▼
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    ┌─────────────┐
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    │ PPO Update  │
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    │ - Policy    │
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    │ - Value fn  │
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    │ - Predictor │
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    │ - Encoder*  │ * Phase 2 only
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    └─────────────┘
+</code></pre></div>
+<h2 id="component-details">Component Details<a class="headerlink" href="#component-details" title="Permanent link">&para;</a></h2>
+<h3 id="1-semantic-encoder">1. Semantic Encoder<a class="headerlink" href="#1-semantic-encoder" title="Permanent link">&para;</a></h3>
+<p><strong>File</strong>: <code>techniques/rl_navigation/encoder.py</code></p>
+<p>The semantic encoder maps raw pixels to semantic feature vectors that are invariant to appearance variations.</p>
+<p><strong>Key Methods</strong>:
+- <code>freeze()</code>: Freeze all parameters (Phase 1)
+- <code>unfreeze_top_layers(n_layers=2)</code>: Unfreeze top transformer blocks (Phase 2)
+- <code>get_patch_features_at_position()</code>: Extract local patch features</p>
+<p><strong>Feature Dimensions</strong>:
+- <code>dinov2_vits14</code>: 384 dims
+- <code>dinov2_vitb14</code>: 768 dims
+- <code>dinov2_vitl14</code>: 1024 dims</p>
+<h3 id="2-navigation-policy">2. Navigation Policy<a class="headerlink" href="#2-navigation-policy" title="Permanent link">&para;</a></h3>
+<p><strong>File</strong>: <code>techniques/rl_navigation/policy.py</code></p>
+<p>PPO-based actor-critic architecture for action selection.</p>
+<p><strong>Actor</strong>: <code>features → action_logits</code> (8 directions)
+<strong>Critic</strong>: <code>features → value_estimate</code> (expected return)</p>
+<h3 id="3-forward-dynamics-model">3. Forward Dynamics Model<a class="headerlink" href="#3-forward-dynamics-model" title="Permanent link">&para;</a></h3>
+<p><strong>File</strong>: <code>techniques/rl_navigation/forward_dynamics.py</code></p>
+<p>Predicts next semantic features given current features and action.</p>
+<p><strong>Variants</strong>:
+- ICM: Action-conditioned prediction
+- RND: Random network distillation</p>
+<h3 id="4-image-navigation-environment">4. Image Navigation Environment<a class="headerlink" href="#4-image-navigation-environment" title="Permanent link">&para;</a></h3>
+<p><strong>File</strong>: <code>techniques/rl_navigation/environment.py</code></p>
+<p>MDP formulation for image exploration.</p>
+<p><strong>State</strong>: Position, visited mask, semantic features
+<strong>Action Space</strong>: 8-connected movement (or extended)
+<strong>Reward</strong>: Rolling-window prediction accuracy</p>
+<h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<h3 id="training-loop">Training Loop<a class="headerlink" href="#training-loop" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Rollout Collection</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rollout_steps</span><span class="p">):</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">features</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>  <span class="c1"># Critical!</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">action</span><span class="p">,</span> <span class="n">log_prob</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">buffer</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>PPO Update</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">advantages</span><span class="p">,</span> <span class="n">returns</span> <span class="o">=</span> <span class="n">compute_gae</span><span class="p">(</span><span class="n">rewards</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">dones</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ppo_epochs</span><span class="p">):</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">minibatches</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="n">policy_loss</span><span class="p">,</span> <span class="n">value_loss</span> <span class="o">=</span> <span class="n">compute_losses</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Predictor Update</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pred_features</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">features_t</span><span class="p">,</span> <span class="n">actions</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">predictor_loss</span> <span class="o">=</span> <span class="n">mse</span><span class="p">(</span><span class="n">pred_features</span><span class="p">,</span> <span class="n">features_t1</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">predictor_optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># In Phase 2, encoder gradients flow through this!</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="critical-design-choices">Critical Design Choices<a class="headerlink" href="#critical-design-choices" title="Permanent link">&para;</a></h2>
+<h3 id="gradient-decoupling">Gradient Decoupling<a class="headerlink" href="#gradient-decoupling" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: If policy loss backprops into encoder, features become policy-specific.</p>
+<p><strong>Solution</strong>: Use <code>features.detach()</code> when passing to policy:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># techniques/rl_navigation/trainer.py:203</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">action</span><span class="p">,</span> <span class="n">log_prob</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span>
+</code></pre></div>
+<p>Encoder only updated via predictor gradients in Phase 2.</p>
+<h3 id="two-phase-training">Two-Phase Training<a class="headerlink" href="#two-phase-training" title="Permanent link">&para;</a></h3>
+<p><strong>Phase 1</strong> (10k episodes):
+- Encoder frozen
+- Stable semantic space
+- Policy learns navigation</p>
+<p><strong>Phase 2</strong> (5k episodes):
+- Top 2 layers unfrozen
+- Very small LR (1e-5)
+- Task-specific adaptation</p>
+<h2 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h2>
+<h3 id="memory-efficiency">Memory Efficiency<a class="headerlink" href="#memory-efficiency" title="Permanent link">&para;</a></h3>
 <ul>
-<li>John Schulman</li>
-<li>Filip Wolski</li>
-<li>Prafulla Dhariwal</li>
-<li>Alec Radford</li>
-<li>Oleg Klimov</li>
+<li>DINOv2 features precomputed and cached</li>
+<li>Rollout buffer uses fixed-size tensors</li>
+<li>Gradient checkpointing not needed (features detached)</li>
 </ul>
-<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
-<p>The authors introduce a novel approach to reinforcement learning through "a new family of policy gradient methods" that alternates between environment interaction and objective function optimization. Unlike conventional policy gradient techniques that perform single updates per sample, this work presents a method enabling "multiple epochs of minibatch updates." The resulting algorithm, termed PPO, incorporates advantages from trust region methods while maintaining simplicity and improved empirical sample efficiency. Testing encompasses robotic simulation and Atari games, demonstrating superior performance relative to comparable online policy approaches.</p>
-<h2 id="key-contributions">Key Contributions<a class="headerlink" href="#key-contributions" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Novel Objective Function:</strong> Enables multiple minibatch optimization epochs per data collection phase, improving computational efficiency</p>
-</li>
-<li>
-<p><strong>Simplified Implementation:</strong> Maintains benefits of trust region policy optimization (TRPO) while reducing implementation complexity</p>
-</li>
-<li>
-<p><strong>Enhanced Performance:</strong> Empirical results show improved sample complexity and wall-time efficiency across benchmark tasks</p>
-</li>
-<li>
-<p><strong>Versatile Application:</strong> Successfully applies to diverse domains including simulated robotics and video game playing</p>
-</li>
-</ol>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<h3 id="computational-cost">Computational Cost<a class="headerlink" href="#computational-cost" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>arXiv:</strong> https://arxiv.org/abs/1707.06347</li>
-<li><strong>DOI:</strong> https://doi.org/10.48550/arXiv.1707.06347</li>
-<li><strong>OpenAI Blog:</strong> https://openai.com/blog/openai-baselines-ppo/</li>
+<li>Forward pass: ~10ms (vits14 on GPU)</li>
+<li>Training step: ~50ms (includes PPO + predictor updates)</li>
+<li>Full Phase 1 (10k episodes): ~2-4 hours on V100</li>
 </ul>
-<h2 id="relevance-to-our-implementation">Relevance to Our Implementation<a class="headerlink" href="#relevance-to-our-implementation" title="Permanent link">&para;</a></h2>
-<p>PPO is the <strong>core policy learning algorithm</strong> in our navigation system. Implementation in techniques/rl_navigation/policy.py:148-341.</p>
-<h3 id="ppo-clipped-objective">PPO Clipped Objective<a class="headerlink" href="#ppo-clipped-objective" title="Permanent link">&para;</a></h3>
-<p>The key innovation is the clipped surrogate objective that prevents too-large policy updates:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PPOTrainer</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rollout_buffer</span><span class="p">,</span> <span class="n">n_epochs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="c1"># Compute probability ratio</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">ratio</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_probs</span> <span class="o">-</span> <span class="n">batch_old_log_probs</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="c1"># Clipped surrogate objective</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">surr1</span> <span class="o">=</span> <span class="n">ratio</span> <span class="o">*</span> <span class="n">batch_advantages</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">surr2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            <span class="n">ratio</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">clip_epsilon</span><span class="p">,</span>  <span class="c1"># Typically 0.2</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">clip_epsilon</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="p">)</span> <span class="o">*</span> <span class="n">batch_advantages</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">policy_loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">surr1</span><span class="p">,</span> <span class="n">surr2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</code></pre></div>
-<h3 id="complete-ppo-update">Complete PPO Update<a class="headerlink" href="#complete-ppo-update" title="Permanent link">&para;</a></h3>
-<p>Our implementation includes all PPO components:</p>
-<ol>
-<li><strong>Policy Loss</strong> (clipped objective)</li>
-<li><strong>Value Loss</strong> (MSE with returns)</li>
-<li><strong>Entropy Bonus</strong> (exploration)</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Total loss (policy.py:308-312)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">loss</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">policy_loss</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_loss_coef</span> <span class="o">*</span> <span class="n">value_loss</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">entropy_coef</span> <span class="o">*</span> <span class="n">entropy_loss</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
-</code></pre></div>
-<h3 id="ppo-hyperparameters-configpy">PPO Hyperparameters (config.py)<a class="headerlink" href="#ppo-hyperparameters-configpy" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@dataclass</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">RLConfig</span><span class="p">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">gamma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.99</span>           <span class="c1"># Discount factor</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">gae_lambda</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span>      <span class="c1"># GAE lambda</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">clip_epsilon</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span>     <span class="c1"># PPO clipping</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">rollout_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2048</span>     <span class="c1"># Steps per rollout</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">ppo_epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span>           <span class="c1"># PPO update epochs</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">ppo_batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">max_grad_norm</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span>
-</code></pre></div>
-<h3 id="why-ppo-for-image-navigation">Why PPO for Image Navigation?<a class="headerlink" href="#why-ppo-for-image-navigation" title="Permanent link">&para;</a></h3>
-<p>PPO is ideal for our task because:</p>
-<ol>
-<li><strong>Sample Efficiency:</strong> Reuses experience through multiple epochs</li>
-<li><strong>Stability:</strong> Clipped objective prevents catastrophic policy collapse</li>
-<li><strong>Simplicity:</strong> No complex second-order optimization (vs TRPO)</li>
-<li><strong>Works with Continuous Features:</strong> Handles high-dimensional DINOv2 features (384-1024 dims)</li>
-</ol>
-<h3 id="training-loop-trainerpy295-343">Training Loop (trainer.py:295-343)<a class="headerlink" href="#training-loop-trainerpy295-343" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="c1"># Phase 1: Frozen encoder</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phase1_episodes</span><span class="p">):</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">rollout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collect_rollout</span><span class="p">()</span>  <span class="c1"># Gather experiences</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">ppo_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ppo_trainer</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">rollout</span><span class="p">)</span>  <span class="c1"># PPO update</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="c1"># Phase 2: Fine-tuned encoder</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">unfreeze_top_layers</span><span class="p">(</span><span class="n">n_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phase2_episodes</span><span class="p">):</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="o">...</span>
-</code></pre></div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>See the <a href="../training/">Training Guide</a> for practical tips on running experiments.</p>
 
 
 
