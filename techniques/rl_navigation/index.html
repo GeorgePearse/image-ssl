@@ -647,18 +647,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#traditional-approach" class="md-nav__link">
+  <a href="#traditional-single-step-prediction" class="md-nav__link">
     <span class="md-ellipsis">
-      Traditional Approach ❌
+      Traditional Single-Step Prediction ❌
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#our-approach" class="md-nav__link">
+  <a href="#our-approach-rolling-window-accuracy" class="md-nav__link">
     <span class="md-ellipsis">
-      Our Approach ✅
+      Our Approach: Rolling Window Accuracy ✅
     </span>
   </a>
   
@@ -1135,18 +1135,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#traditional-approach" class="md-nav__link">
+  <a href="#traditional-single-step-prediction" class="md-nav__link">
     <span class="md-ellipsis">
-      Traditional Approach ❌
+      Traditional Single-Step Prediction ❌
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#our-approach" class="md-nav__link">
+  <a href="#our-approach-rolling-window-accuracy" class="md-nav__link">
     <span class="md-ellipsis">
-      Our Approach ✅
+      Our Approach: Rolling Window Accuracy ✅
     </span>
   </a>
   
@@ -1331,54 +1331,64 @@
 
 <h1 id="rl-based-image-navigation">RL-Based Image Navigation<a class="headerlink" href="#rl-based-image-navigation" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>RL-based image navigation casts the problem of learning semantic paths through images as a <strong>curiosity-driven reinforcement learning</strong> task. An agent learns to navigate using prediction error as an intrinsic curiosity signal in a learned semantic feature space.</p>
+<p>RL-based image navigation learns semantic paths through images by maximizing <strong>prediction accuracy over a rolling window</strong> of future semantic features. An agent learns to navigate by finding paths where it can build up predictive understanding of semantic regions.</p>
 <h2 id="the-core-idea">The Core Idea<a class="headerlink" href="#the-core-idea" title="Permanent link">&para;</a></h2>
-<h3 id="traditional-approach">Traditional Approach ❌<a class="headerlink" href="#traditional-approach" title="Permanent link">&para;</a></h3>
-<p>Most approaches try to <strong>predict the next pixel/patch accurately</strong>:</p>
+<h3 id="traditional-single-step-prediction">Traditional Single-Step Prediction ❌<a class="headerlink" href="#traditional-single-step-prediction" title="Permanent link">&para;</a></h3>
+<p>Most approaches optimize immediate prediction accuracy:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Reward = -||predicted_pixels - actual_pixels||²
 </code></pre></div>
-<p><strong>Problem:</strong> Agent seeks predictable, boring regions (uniform sky, blank walls)</p>
-<h3 id="our-approach">Our Approach ✅<a class="headerlink" href="#our-approach" title="Permanent link">&para;</a></h3>
-<p>We use prediction error as a <strong>curiosity signal</strong> (intrinsic motivation):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Reward = ||predicted_features - actual_features||²
+<p><strong>Problem:</strong> Agent seeks trivially predictable regions (uniform sky, blank walls)</p>
+<h3 id="our-approach-rolling-window-accuracy">Our Approach: Rolling Window Accuracy ✅<a class="headerlink" href="#our-approach-rolling-window-accuracy" title="Permanent link">&para;</a></h3>
+<p>We maximize prediction accuracy over multiple future steps:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Reward = Σ exp(-λ·d) · accuracy_at_distance_d
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>       d=1 to horizon
 </code></pre></div>
-<p><strong>Result:</strong> Agent explores information-dense regions!</p>
-<p>Like active learning: high error = "I don't understand this transition yet" = worth exploring. As the forward model learns, agent moves to new informative regions.</p>
+<p><strong>Result:</strong> Agent seeks semantically coherent paths!</p>
+<p><strong>Example - hitting a car edge:</strong>
+1. Step 0→1: Poor prediction (road → car color jump)
+2. Steps 1→10: Excellent predictions ("more car" → "more car")
+3. High rolling-window accuracy = semantic coherence = information-rich</p>
+<p>This is fundamentally different from staying in uniform regions (which have high single-step accuracy but no semantic structure).</p>
 <h2 id="why-this-works">Why This Works<a class="headerlink" href="#why-this-works" title="Permanent link">&para;</a></h2>
-<p>The key insight: <strong>prediction error correlates with semantic information content</strong>.</p>
+<p>The key insight: <strong>rolling-window prediction accuracy correlates with semantic coherence</strong>.</p>
 <p>Consider navigating from a car:</p>
 <table>
 <thead>
 <tr>
 <th>Next Region</th>
-<th>Prediction Error</th>
-<th>Information Content</th>
+<th>Initial Error</th>
+<th>Subsequent Accuracy</th>
+<th>Rolling Window Score</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>More of same car</td>
 <td>Low</td>
-<td>Low (redundant)</td>
+<td>High (redundant)</td>
+<td>Medium</td>
 </tr>
 <tr>
 <td>Road beneath</td>
 <td>High</td>
-<td>High (new object type)</td>
+<td>High (new object, then coherent)</td>
+<td>High</td>
 </tr>
 <tr>
 <td>Sky above</td>
 <td>High</td>
-<td>High (new context)</td>
+<td>High (new context, then coherent)</td>
+<td>High</td>
 </tr>
 <tr>
-<td>Another car</td>
-<td>High</td>
-<td>High (co-occurrence pattern)</td>
+<td>Uniform wall</td>
+<td>Low</td>
+<td>High (but trivial)</td>
+<td>Low (no structure)</td>
 </tr>
 </tbody>
 </table>
-<p>The agent follows <strong>prediction error gradients toward semantically rich transitions</strong>.</p>
+<p>The agent learns to follow <strong>paths with semantic transitions that build predictive understanding</strong>.</p>
 <h2 id="the-car-color-problem">The "Car Color Problem"<a class="headerlink" href="#the-car-color-problem" title="Permanent link">&para;</a></h2>
 <p>A critical challenge: <strong>cars can be any color</strong>.</p>
 <h3 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>

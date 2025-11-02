@@ -1122,10 +1122,10 @@
 
 
 <h1 id="visual-next-token-rl-based-image-navigation">Visual Next Token - RL-Based Image Navigation<a class="headerlink" href="#visual-next-token-rl-based-image-navigation" title="Permanent link">&para;</a></h1>
-<p>Welcome to Visual Next Token! This project implements <strong>curiosity-driven reinforcement learning</strong> for learning semantic paths through images by maximizing prediction error of future visual tokens.</p>
+<p>Welcome to Visual Next Token! This project implements <strong>curiosity-driven reinforcement learning</strong> for learning semantic paths through images by maximizing prediction accuracy over a rolling window of future visual tokens.</p>
 <h2 id="what-is-visual-next-token">What is Visual Next Token?<a class="headerlink" href="#what-is-visual-next-token" title="Permanent link">&para;</a></h2>
-<p>Visual Next Token explores how agents can learn to navigate images by seeking information-dense regions. The core insight: <strong>using prediction error as a curiosity signal guides the agent to explore semantically meaningful paths</strong> - from cars to roads to sky, following co-occurrence patterns in visual scenes.</p>
-<p>Like active learning: high prediction error indicates "I don't understand this transition yet" → worth exploring. As the agent learns, it moves to new informative regions.</p>
+<p>Visual Next Token explores how agents can learn to navigate images by seeking semantically coherent paths. The core insight: <strong>maximizing prediction accuracy over a rolling window guides the agent to paths where it can build predictive understanding</strong> - from cars to roads to sky, following co-occurrence patterns in visual scenes.</p>
+<p><strong>Example</strong>: Hitting a car edge gives poor initial prediction (color jump), but then excellent predictions of "more car" regions. High rolling-window accuracy = semantic coherence = information-rich path.</p>
 <h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <h3 id="rl-based-image-navigation">🧠 RL-Based Image Navigation<a class="headerlink" href="#rl-based-image-navigation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1168,19 +1168,19 @@
 <p>Traditional approaches predict <strong>what</strong> pixels come next. We flip this:</p>
 <div class="admonition success">
 <p class="admonition-title">Our Approach</p>
-<p><strong>Maximize prediction ERROR</strong> → Agent seeks surprising, information-dense regions</p>
+<p><strong>Maximize rolling-window prediction ACCURACY</strong> → Agent seeks semantically coherent paths</p>
 <ul>
-<li>High prediction error = novel/informative region</li>
-<li>Agent learns paths like: car → road + sky → buildings</li>
+<li>High multi-step accuracy = understanding semantic regions (car → more car)</li>
+<li>Agent learns paths with rich semantic transitions</li>
 <li>Semantic features (DINOv2) ensure car color doesn't matter</li>
 </ul>
 </div>
 <div class="admonition failure">
-<p class="admonition-title">Traditional Approach</p>
-<p><strong>Maximize prediction ACCURACY</strong> → Agent seeks boring, predictable regions</p>
+<p class="admonition-title">Traditional Single-Step Approach</p>
+<p><strong>Maximize immediate prediction ACCURACY</strong> → Agent seeks trivially predictable regions</p>
 <ul>
-<li>High accuracy = uniform sky, blank walls</li>
-<li>No incentive to explore semantically rich areas</li>
+<li>Stays in uniform sky, blank walls</li>
+<li>No incentive to explore semantic structure</li>
 </ul>
 </div>
 <h2 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
